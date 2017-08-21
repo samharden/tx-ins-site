@@ -25,7 +25,7 @@ SECRET_KEY = 'e5oh0jt5l8s&0h#ku@9tru0vx$awynfqpk%-0qxc34kq&g$%71'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://hardenlegal.herokuapp.com/', 'hardenlegal.com']
 
 
 # Application definition
