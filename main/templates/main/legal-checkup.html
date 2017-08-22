@@ -9,12 +9,17 @@
 
 <div class="card" style="text-align:left">
   <div class="card-header">
-    <h1 class="text-dark">Wills, Trusts, and Estates</h1>
+    <h1 class="text-dark">Legal Checkup</h1>
   </div>
   <div class="card-body">
-    <h4 class="card-title; text-dark">Free Legal Checkup</h4>
-    <p class="card-text; text-dark">Find out if your legal documents are up to snuff</p>
-    <a href="#" class="btn btn-primary">Begin</a>
+    <form method="post" style="margin: auto;" class="text-dark">
+
+    {% csrf_token %}
+
+    <h4>{{form.first_name}}</h4>
+    <h4>{{form.email}}</h4>
+    <h4>{{form.dpoa}}</h4>
+    </form>
 
   </div>
 </div>

@@ -10,6 +10,6 @@ urlpatterns = [
     url(r'^injunctions', views.injunctions, name='injunctions'),
     url(r'^sealing-criminal-record', views.seal_crim, name='sealing-criminal-record'),
     url(r'^wills-trusts-estates', views.wte_page, name='wills-trusts-estates'),
-
+    url(r'^legal-checkup', views.checkup, name='legal-checkup'),
 
 ]
