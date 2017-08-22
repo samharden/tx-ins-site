@@ -1,8 +1,7 @@
 from django.db import models
 
 # Create your models here.
-import pandas as pd
-from pandas import DataFrame
+
 import sqlalchemy as sa
 from django.db.models.aggregates import Count
 from random import randint
