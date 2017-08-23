@@ -10,26 +10,8 @@
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
- <script>
- function openJudge(evt, cityName) {
-     var i, tabcontent, tablinks;
-     tabcontent = document.getElementsByClassName("tabcontent");
-     for (i = 0; i < tabcontent.length; i++) {
-         tabcontent[i].style.display = "none";
-     }
-     tabcontentgraph = document.getElementsByClassName("tabcontentgraph");
-     for (i = 0; i < tabcontentgraph.length; i++) {
-         tabcontentgraph[i].style.display = "none";
-     }
-     tablinks = document.getElementsByClassName("tablinks");
-     for (i = 0; i < tablinks.length; i++) {
-         tablinks[i].className = tablinks[i].className.replace(" active", "");
-     }
-     document.getElementById(cityName).style.display = "block";
-     evt.currentTarget.className += " active";
- }
- </script>
 <style>
 
 /* Links */
@@ -220,6 +202,13 @@ input[type="radio"] {
     background-size: cover;
 
 }
+.tabcontent {
+    display: none;
+    border-top: none;
+    width: 100%;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
 </style>
 <meta charset="UTF-8">
 {% if title %}
@@ -269,12 +258,24 @@ input[type="radio"] {
           <a href="tel:8134422788"><button type="button" style="width:200px" class="btn btn-primary"><i class="material-icons">phonelink_ring</i> &nbsp Call
         </button></a>
         <br><br>
-        <a href=""><button type="button" style="width:200px" class="btn btn-primary"><i class="material-icons">directions</i> &nbsp Directions
-      </button></a>
+
+      <p>
+
+  <button class="btn btn-primary" type="button" style="width:200px" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <i class="material-icons">directions</i> &nbsp Directions
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-block">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.4122230258945!2d-82.51088178492996!3d28.07296308264185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c08d666b75e7%3A0xcbd42c6ae0bfa948!2s13919+Carrollwood+Village+Run%2C+Tampa%2C+FL+33618!5e1!3m2!1sen!2sus!4v1503516188804" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+</div>
+
           </div>
         </div>
       </div>
     </div>
+
 {% block content %}
 
 {% endblock %}
