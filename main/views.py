@@ -48,13 +48,34 @@ def seal_crim(request):
 
 
             case_dispo = df['DISPO']
+            df = df.replace('NT - LETTER OF RELEASE', 'Potentially')
+            df = df.replace('NT - DISMISSED', 'Potentially')
+            df = df.replace('NT - ADJUDICATION WITHHELD', 'Potentially')
+            df.columns = ['Case No:','Count:','Charge:','Can Seal/Expunge:']
+
+
             case_amt = len(case_dispo)
 
+            empty_dict = {          'Can Seal/Expunge:':[],
+                                    'Case No:':[],
+                                    'Count:':[],
+                                    'Charge:':[],
+                                    }
+            for x in range(0, case_amt):
+                casenum = df.iloc[x]['Case No:']
+                empty_dict['Case No:'].append(casenum)
+                count = df.iloc[x]['Count:']
+                empty_dict['Count:'].append(count)
+                charge = df.iloc[x]['Charge:']
+                empty_dict['Charge:'].append(charge)
+                sealability = df.iloc[x]['Can Seal/Expunge:']
+                empty_dict['Can Seal/Expunge:'].append(sealability)
 
             return render(request, 'main/sealing-criminal-record.html',
                                     {'form':form,
                                     'df':df.to_html,
                                     'case_amt': case_amt,
+                                    'empty_dict':empty_dict,
                                     })
         else:
             form = SearchHillsPriors()
