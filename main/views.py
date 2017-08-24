@@ -51,6 +51,19 @@ def seal_crim(request):
             df = df.replace('NT - LETTER OF RELEASE', 'Potentially')
             df = df.replace('NT - DISMISSED', 'Potentially')
             df = df.replace('NT - ADJUDICATION WITHHELD', 'Potentially')
+            df = df.replace('NT - NO INFORMATION FILED', 'Potentially')
+            df = df.replace('STATE CLOSED FILE DIVERSION', 'Potentially')
+            df = df.replace('NT - NOLLE PROSSED FOR PURPOSE OF PRE TRIAL DIVERSION', 'Potentially')
+            df = df.replace('NT - NOLLE PROSSED', 'Potentially')
+
+            df = df.replace('NT - ADJUDGED GUILTY', 'No')
+            df = df.replace('NJT - ADJUDGED GUILTY', 'No')
+            df = df.replace('JT - ADJUDGED GUILTY', 'No')
+
+
+
+            CONV
+
             df.columns = ['Case No:','Count:','Charge:','Can Seal/Expunge:']
 
 
