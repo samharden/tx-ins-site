@@ -21,3 +21,24 @@ class mainForm(forms.ModelForm):
         self.fields['email'].required = False
         self.fields['first_name'].required = False
         self.fields['last_name'].required = False
+
+class SearchHillsPriors(forms.Form):
+    
+    first_name = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'First Name',
+                                })
+                                )
+    last_name = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'Last Name',
+                                })
+                                )
+    dob = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'DOB: mm/dd/yr',
+                                })
+                                )

@@ -2,20 +2,112 @@
 
 {% block content %}
 
-<div class="jumbotron jumbotron-fluid" >
-  <div class="container" style="text-align:center"><br>
 
+
+<!--Mask-->
+<div class="view" >
+    <!--Intro content-->
+
+    <!--/Intro content-->
+
+<!--/.Mask-->
+
+
+<br><br><br><br>
+  <div class="container" style="text-align:center"><br>
 
 
 <div class="card" style="text-align:left">
   <div class="card-header">
-    <h1 class="text-dark">Sealing Criminal Records</h1>
+    <h1 class="text-dark" style="text-align:center">Sealing Criminal Records</h1>
   </div>
   <div class="card-body">
-    <h4 class="card-title; text-dark">Don't let your record hurt your future.</h4>
-    <p class="card-text; text-dark">Let us guide you through the process of sealing
-    or expunging your criminal record.</p>
-    <a href="#" class="btn btn-primary">Get started</a>
+    <h3 class="card-title; text-dark" style="text-align:center">Search Hillsborough Records</h3>
+    <p class="card-text; text-dark">If you have had a criminal case in Hillsborough County, find out
+     if it's sealable using our free search tool:</p>
+
+      <form method="post" style="margin: auto;" class="text-dark, textarea">
+        {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" style="background-color:#007BFF;" class="btn btn-primary" value="Search"/>
+    </form>
+    <div class="text-dark"
+    {% if case_amt > 0 %}
+    <div class="card; text-dark"><center>
+      <div class="card-header">
+        <h5>Cases Found</h5>
+    <div class="card-block text-dark"><table>
+  {{ df|safe }}
+</table></div>
+</div></div></center>
+{% endif %}
+
+  {% if case_amt == 0 %}
+  <h2 style="text-align:center">Sorry, we didn't find any results.</h2>
+{% endif %}
+</div>
+<br><br>
+      <div id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="card">
+    <div class="card-header" role="tab" id="headingOne">
+      <h5 class="mb-0" style="text-align:center">
+        <a data-toggle="collapse" style="text-align:center" class="text-dark" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Do-It-Yourself Sealing and Expungement Forms:
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+      <div class="card-block text-dark" style="margin-left:7px; margin-right:7px">
+        The first step to sealing a criminal record is downloading and completing the
+        FDLE Application for a Certificate of Eligibility Packet.
+        <br><br>
+        <center>{% load static %}
+
+          <a href="{% static 'main/FDLEpacket.pdf' %}" class="btn btn-primary">Download FDLE Packet</a>
+        </center>
+        <br>
+        Once you've obtained a certificate of eligibility from FDLE, you will then need to
+        complete the Petition to Expunge or Seal, as well as an Affidavit, and file them
+        along with the Certificate of Eligibility with the Hillsborough County Clerk of Courts.
+        <br><br>
+        <center>
+          <a href="{% static 'main/petition.pdf' %}" class="btn btn-primary">Download Petition</a>
+        </center>
+        <br>
+      </div>
+
+    </div>
   </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingTwo">
+      <h5 class="mb-0" style="text-align:center">
+        <a class="collapsed text-dark" style="text-align:center" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Flat Fee Sealing and Expunging Services:
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="card-block text-dark" style="margin-left:7px; margin-right:7px">
+        For a flat fee of $300 we will walk you through the sealing or expunging process.
+        This flat fee includes:
+        </div>
+    </div>
+  </div>
+
+  
+  </div>
+</div>
+
+
+    <!-- <a href="#" class="btn btn-primary">Contact us now</a> -->
+  </div>
+</div>
+<br><br>
+
+<br><br>
+
+
+</div>
 </div>
 {% endblock %}
