@@ -60,10 +60,6 @@ def seal_crim(request):
             df = df.replace('NJT - ADJUDGED GUILTY', 'No')
             df = df.replace('JT - ADJUDGED GUILTY', 'No')
 
-
-
-            CONV
-
             df.columns = ['Case No:','Count:','Charge:','Can Seal/Expunge:']
 
 
