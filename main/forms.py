@@ -1,6 +1,7 @@
 from main.models import *
 from django import forms
 from django.core.validators import validate_email
+from main.form_choices import *
 
 class mainForm(forms.ModelForm):
     dpoa = forms.BooleanField(label = 'DPOA?')
@@ -23,7 +24,12 @@ class mainForm(forms.ModelForm):
         self.fields['last_name'].required = False
 
 class SearchHillsPriors(forms.Form):
-    
+
+    prior_conviction = forms.ChoiceField(
+                                        required = True,
+                                        choices = YN_CHOICES
+                                        )
+
     first_name = forms.CharField(label = '',
                                 required = True,
                                 widget = forms.TextInput(attrs={
