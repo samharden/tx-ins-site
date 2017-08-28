@@ -27,6 +27,8 @@ class SearchHillsPriors(forms.Form):
 
     prior_conviction = forms.ChoiceField(
                                         required = True,
+                                        label='Do you have any prior convictions\
+                                        or adjudications of guilt?',
                                         choices = YN_CHOICES
                                         )
 
