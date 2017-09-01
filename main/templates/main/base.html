@@ -45,7 +45,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  /*background-color: #333;*/
   color: #fff;
   /*text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);*/
@@ -283,12 +283,14 @@ body {
   z-index: 1;
   position: relative;
   background: #FFF;
-  width: 97%;
+  width: 93%;
+  min-height: 300px;
+  max-height: 10000px;
   /*height: 100%;*/
   border-radius: 6px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .app {
@@ -369,7 +371,7 @@ body {
 .app-tabs {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  /*display: flex;*/
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -410,11 +412,11 @@ body {
   position: absolute;
 
   top: 20px;
-  left: calc(100% - 20px);
+  left: calc(100% );
   background: #FFF;
   width: 100%;
   height: 100%;
-  padding: 10px 5px 0;
+  padding: 10px 5px 5px 10px;
   box-sizing: border-box;
   -webkit-transition: 0.6s cubic-bezier(0.28, 0.55, 0.36, 1.18);
   transition: 0.6s cubic-bezier(0.28, 0.55, 0.36, 1.18);
@@ -446,9 +448,9 @@ body {
 }
 .app-panel__content {
   /*width:100%;*/
-  display: -webkit-box;
+  /*display: -webkit-box;*/
   display: -ms-flexbox;
-  display: flex;
+  /*display: flex;*/
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -467,6 +469,10 @@ body {
 .app-panel__column li {
   padding: 10px 0;
 }
+#icon-one{display:block}
+#icon-two{display:none}
+#icon-three{display:none}
+
 
 #app-event-1, #app-event-2, #app-event-3, #app-event-4, #app-event-5 {
   display: none;
@@ -485,11 +491,13 @@ body {
 }*/
 
 
-/*#app-event-3:checked ~ .body .app .app-header .app-header__image img:first-child {
+#app-event-3:checked ~ .body .app .app-header .app-header__image img.icon-one img.icon-two {
+
   display: none;
 }
-#app-event-3:checked ~ .body .app .app-header .app-header__image img:last-child {
-  display: block;
+/*#app-event-3:checked ~ .body .app .app-header .app-header__image img:last-child next-sibling {
+
+  display: none;
 }*/
 #app-event-3:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--one {
   color: #222;
@@ -501,9 +509,20 @@ body {
   box-shadow: none;
 }
 /*#app-event-3:checked ~ .body .app .app-body .app-panel--one {
-  left: calc(-100% + 80px);
+  left: calc(1%);
+  right: 3px;
+}*/
+#app-event-3:checked ~ .body .app .app-body .app-panel--one {
+  left: 1px;
+  width:97%;
+}
+#app-event-3:checked ~ .body .app .app-body .app-panel--three {
+display:none;
 }
 #app-event-3:checked ~ .body .app .app-body .app-panel--two {
+display:none;
+}
+/*#app-event-3:checked ~ .body .app .app-body .app-panel--two {
   left: 30px;
 }*/
 
@@ -516,8 +535,12 @@ body {
   display: none;
 }
 #app-event-4:checked ~ .body .app .app-header .app-header__image img:last-child {
-  display: block;
+  display: none;
 }
+/*#app-event-4:checked ~ icon-one;*/
+
+
+
 #app-event-4:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--one {
   color: #999;
   box-shadow: none;
@@ -527,19 +550,32 @@ body {
   box-shadow: inset 0 -2px 0 0 #222;
 }
 #app-event-4:checked ~ .body .app .app-body .app-panel--one {
-  left: calc(-110% + 80px);
+  /*left: calc(-110% + 80px);*/
+  display:none;
+}
+#app-event-4:checked ~ .body .app .app-body .app-panel--three {
+  /*left: calc(-110% + 80px);*/
+  display:none;
 }
 #app-event-4:checked ~ .body .app .app-body .app-panel--two {
   left: 1px;
   width:97%;
 }
 
+
+
 #app-event-5:checked ~ .body .app .app-header .app-header__image img:first-child {
   display: none;
 }
 #app-event-5:checked ~ .body .app .app-header .app-header__image img:last-child {
-  display: block;
+  display: none;
 }
+#app-event-5:checked ~ .icon-one .icon-two {
+  display: none;
+}
+/*#app-event-5:checked ~ .body .app .app-header .app-header__image img:last-child {
+  display: none;
+}*/
 #app-event-5:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--one {
   color: #999;
   box-shadow: none;
@@ -553,10 +589,10 @@ body {
   box-shadow: inset 0 -2px 0 0 #222;
 }
 #app-event-5:checked ~ .body .app .app-body .app-panel--one {
-  left: calc(-110% + 80px);
+  display:none;
 }
 #app-event-5:checked ~ .body .app .app-body .app-panel--two {
-  left: calc(-110% + 80px);
+  display:none;
 }
 #app-event-5:checked ~ .body .app .app-body .app-panel--three {
   left: 1px;

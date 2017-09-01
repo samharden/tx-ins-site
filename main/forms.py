@@ -3,50 +3,87 @@ from django import forms
 from django.core.validators import validate_email
 from main.form_choices import *
 
-class mainForm(forms.ModelForm):
-    dpoa = forms.BooleanField(label = 'DPOA?')
-    class Meta:
-        model = checkupForm
-        fields = [ 'first_name', 'last_name', 'email', 'age', 'dpoa']
-        widgets = {
-                'first_name': forms.TextInput(attrs={'placeholder': 'First Name'}),
-                'last_name': forms.TextInput(attrs={'placeholder': 'Last Name'}),
-                'email': forms.TextInput(attrs={'placeholder': 'Email'}),
-                'age': forms.TextInput(attrs={'placeholder': 'Age'}),
 
 
+class proof_of_loss(forms.Form):
 
-        }
-    def __init__(self, *args, **kwargs):
-        super(mainForm, self).__init__(*args, **kwargs)
-        self.fields['email'].required = False
-        self.fields['first_name'].required = False
-        self.fields['last_name'].required = False
-
-class SearchHillsPriors(forms.Form):
-
-    prior_conviction = forms.ChoiceField(
+    insurer = forms.ChoiceField(
                                         required = True,
-                                        label='Do you have any prior convictions\
-                                        or adjudications of guilt?', 
+                                        label='Insurer',
                                         choices = YN_CHOICES
                                         )
 
-    first_name = forms.CharField(label = '',
+    policy_number = forms.CharField(label = '',
                                 required = True,
                                 widget = forms.TextInput(attrs={
-                                'placeholder': 'First Name',
+                                'placeholder': 'Policy Number',
                                 })
                                 )
-    last_name = forms.CharField(label = '',
+    policy_term = forms.CharField(label = '',
                                 required = True,
                                 widget = forms.TextInput(attrs={
-                                'placeholder': 'Last Name',
+                                'placeholder': 'Policy Term',
                                 })
                                 )
-    dob = forms.CharField(label = '',
+    bldg_cov = forms.CharField(label = '',
                                 required = True,
                                 widget = forms.TextInput(attrs={
-                                'placeholder': 'DOB: mm/dd/yr',
+                                'placeholder': 'Amount of Ins. Coverage for Building',
                                 })
                                 )
+    contents_cov = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'Amount of Ins. Coverage for Contents',
+                                })
+                                )
+    insured_name = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'Name of Policyholder',
+                                })
+                                )
+    loss_type = forms.ChoiceField(
+                                        required = True,
+                                        label='Type of Loss',
+                                        choices = YN_CHOICES
+                                        )
+    loss_time = forms.ChoiceField(
+                                        required = True,
+                                        label='Time of Loss',
+                                        choices = YN_CHOICES
+                                        )
+    loss_day = forms.ChoiceField(
+                                        required = True,
+                                        label='Day of Loss',
+                                        choices = YN_CHOICES
+                                        )
+    loss_month= forms.ChoiceField(
+                                        required = True,
+                                        label='Time of Loss',
+                                        choices = YN_CHOICES
+                                        )
+    loss_year = forms.ChoiceField(
+                                        required = True,
+                                        label='Time of Loss',
+                                        choices = YN_CHOICES
+                                        )
+
+
+    loss_cause = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'Cause of Loss',
+                                })
+                                )
+    occupancy_type = forms.ChoiceField(
+                                        required = True,
+                                        label='Time of Loss',
+                                        choices = YN_CHOICES
+                                        )
+
+    other_prop_interests = forms.ChoiceField(
+                                        required = True,
+                                        label='Time of Loss',
+                                        choices = YN_CHOICES
+                                        )

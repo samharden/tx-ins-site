@@ -28,11 +28,15 @@
       </div> -->
     </div>
     <div class="app-header">
-      <div class="app-header__image"><img src="{% static 'main/file.png' %}"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/donut-thin.png"/></div>
-      <div class="app-tabs">
-        <label class="app-tabs__tab app-tabs__tab--one" for="app-event-3">Report the loss</label>
-        <label class="app-tabs__tab app-tabs__tab--two" for="app-event-4">Document the loss</label>
-        <label class="app-tabs__tab app-tabs__tab--three" for="app-event-5">Document the loss</label>
+      <!-- <div class="app-header__image">
+        <img id = "icon-one" src="{% static 'main/file.png' %}">
+        <img id = "icon-two" src="{% static 'main/camera.png' %}">
+        <img id = "icon-three" src="{% static 'main/upload.png' %}"></div> -->
+      <div class="app-tabs"><center>
+        <label class="app-tabs__tab app-tabs__tab--one" for="app-event-3"><h6>Report the Loss</h6></label>
+        <label class="app-tabs__tab app-tabs__tab--two" for="app-event-4"><h6>Document The Damage</h6></label>
+        <label class="app-tabs__tab app-tabs__tab--three" for="app-event-5"><h6>Complete a Proof of Loss</h6></label>
+      </center>
       </div>
     </div>
     <center>
@@ -40,16 +44,24 @@
       <div class="app-panel app-panel--one" >
         <!-- <div class="app-panel__header">Header One</div> -->
         <div class="app-panel__content">
+          <img src="{% static 'main/file.png' %}">
           <div class="card" style="text-align:left" style="max-width:97%">
             <div class="card-header">
-              <h1 class="text-dark" style="text-align:center">Uno</h1>
+              <h4 class="text-dark" style="text-align:center">Start The Claims Process By Notifying Your Insurer</h4>
             </div>
             <div class="card-body">
-              <h4 class="card-title text-dark">Text Here</h4>
-              <p class="card-text text-dark">More text</p>
-              <center>
-              <a href="/" class="btn btn-primary" style="width:275px">Learn More</a>
-            </center>
+
+              <p class="card-text text-dark">After experiencing a flood, contact your agent or insurance company to file a claim.</p>
+                <p class="card-text text-dark">Make sure you have the following information handy:</p>
+                <li>The name of your insurance company;</li>
+                <li>Your policy number;</li>
+                <li>A telephone and/or email address where you can be reached at all times;</li>
+                <br><center>
+                <a href="/" class="btn btn-primary" style="width:55%">Look up your insurer</a></center>
+                <br>
+                <p class="card-text text-dark">An adjuster should contact you within a few days of filing your claim.
+                  If you do not hear from an adjuster, you can contact your insurance agent or company again.</p>
+
             </div>
           </div>
 
@@ -58,13 +70,22 @@
       <div class="app-panel app-panel--two">
         <!-- <div class="app-panel__header">2eader Two</div> -->
         <div class="app-panel__content">
+          <img src="{% static 'main/camera.png' %}">
           <div class="card" style="text-align:left" style="max-width:97%">
             <div class="card-header">
-              <h1 class="text-dark" style="text-align:center">Federal Insurance Claim Form</h1>
+              <h4 class="text-dark" style="text-align:center">Collecting evidence of the damage to your home</h4>
             </div>
             <div class="card-body">
-              <h4 class="card-title text-dark">Text Here</h4>
-              <p class="card-text text-dark">More text</p>
+
+              <p class="card-text text-dark">Separate damaged from undamaged property. Your adjuster will
+                need evidence of the damage to your home and possessions to prepare your repair estimate.</p>
+                <li>Take photographs of all of the damaged property, including discarded objects, structural damage, and standing floodwater levels.</li>
+                <li>Make a list of damaged or lost items and include their date of purchase, value, and receipts, if possible.</li>
+                <li>Officials may require disposal of damaged items so, if possible, place flooded items outside of the home.</li>
+
+
+
+</p>
               <center>
               <a href="/" class="btn btn-primary" style="width:275px">Learn More</a>
             </center>
@@ -76,17 +97,50 @@
       <div class="app-panel app-panel--three">
         <!-- <div class="app-panel__header">3eader Three</div> -->
         <div class="app-panel__content">
-
+          <img src="{% static 'main/upload.png' %}"></div>
             <div class="card" style="text-align:left" style="max-width:97%">
               <div class="card-header">
-                <h1 class="text-dark" style="text-align:center">Federal Insurance Claim Form</h1>
+                <h4 class="text-dark" style="text-align:center">Federal Insurance Claim Form</h4>
               </div>
               <div class="card-body">
-                <h4 class="card-title text-dark">Text Here</h4>
-                <p class="card-text text-dark">More text</p>
-                <center>
-                <a href="/" class="btn btn-primary" style="width:275px">Learn More</a>
-              </center>
+                <h4 class="card-title text-dark">About the Proof of Loss</h4>
+                <p class="card-text text-dark">A Proof of Loss is a policyholder’s statement of the amount
+                  of money being requested, signed to and sworn to by the policyholder with documentation
+                  to support the amount requested.   It is important to understand the Proof of Loss is not
+                  the claim.  The claim is the policyholders’ declaration that they are entitled to be paid
+                  for a covered loss under the terms of the Standard Flood Insurance Policy (SFIP).  A
+                  policyholder who suffers flood damage to NFIP insured property has only one claim arising
+                  from that event, regardless of the number of Proofs of Loss with documentation packages
+                  the policyholder may submit in support of that claim.</p>
+                  <p class="card-text text-dark">The complete Proof of Loss, signed and sworn to by the
+                    policyholder, along with documentation to support the amount requested initially and
+                    any requests for additional payment must be sent to the NFIP servicing Agent or Write
+                    Your Own Company (“NFIP Insurer”) within 60 days after the date of loss or within any
+                    extension of that deadline made in writing by the Associate Administrator for Federal
+                    Insurance and Mitigation.  The insurance adjuster hired by the NFIP insurer may provide
+                    a proof of loss form  to the policyholder and may help complete it.  However,
+                    this assistance is a matter of courtesy and the policyholder must still submit the complete proof of loss,
+                    as described above, to the NFIP insurer within the required time period.</p>
+                    <center>
+                    <a href="/" class="btn btn-primary" style="width:275px">Complete</a></center><br>
+                    <h4 class="card-title text-dark">Where do I send my Proof of Loss in support of my Claim?</h4>
+                    <p class="card-text text-dark">If your policy was issued by a Write Your Own program-participating
+                      insurance company, please contact the insurance agent or carrier directly to find out
+                      the proper address for submitting your Proof of Loss.</p>
+                    <p class="card-text text-dark">If your policy was issued by FEMA through the National
+                      Flood Insurance Program (NFIP) Direct Servicing Agent, the only
+                      addresses to which your Proof of Loss must be sent is the following:</p>
+                      <br>
+                      <u>Regular Mail:</u><br>
+                      NFIP Direct Servicing Agent<br>
+                      P.O. Box 2966<br>
+                      Shawnee Mission, KS 66201-1366<br>
+                      <br><br>
+                      <u>Overnight Mail:</u><br>
+                      NFIP Direct Servicing Agent<br>
+                      7701 College Blvd.<br>
+                      Overland Park, KS 66210<br>
+                
               </div>
             </div>
           </div>
