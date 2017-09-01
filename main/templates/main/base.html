@@ -260,35 +260,328 @@ button, input, textarea {
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s;
 }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: white;
+  color: #444;
+  font-family: 'Montserrat';
+        font-size: 16px;
+  font-weight: 300;
+  padding: 80px 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.body {
+  z-index: 1;
+  position: relative;
+  background: #FFF;
+  width: 97%;
+  /*height: 100%;*/
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+.app-menu {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px 30px 20px;
+}
+.app-menu__title {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.app-nav {
+  display: inline-block;
+}
+.app-nav__icon {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 10px;
+  cursor: pointer;
+}
+.app-nav__icon:before, .app-nav__icon:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: #222;
+  width: 100%;
+  height: 1px;
+  -webkit-transition: 0.3s cubic-bezier(0.28, 0.55, 0.36, 1.18);
+  transition: 0.3s cubic-bezier(0.28, 0.55, 0.36, 1.18);
+}
+.app-nav__icon:after {
+  top: auto;
+  bottom: 0;
+}
+.app-nav ul {
+  display: none;
+}
+
+.app-header__image {
+  padding: 40px 0;
+}
+.app-header__image img {
+  display: block;
+  margin: 0 auto;
+}
+.app-header__image img:last-child {
+  display: none;
+}
+.app-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.app-tabs__tab {
+  margin: 0 15px;
+  padding: 10px 0;
+  color: #999;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.app-tabs__tab--one {
+  color: #222;
+  box-shadow: inset 0 -2px 0 0 #222;
+}
+.app-body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align:center;
+  /*background: #EEF2F6;*/
+  height: 500px;
+}
+.app-panel {
+  position: absolute;
+
+  top: 20px;
+  left: calc(100% - 20px);
+  background: #FFF;
+  width: 100%;
+  height: 100%;
+  padding: 10px 5px 0;
+  box-sizing: border-box;
+  -webkit-transition: 0.6s cubic-bezier(0.28, 0.55, 0.36, 1.18);
+  transition: 0.6s cubic-bezier(0.28, 0.55, 0.36, 1.18);
+}
+.app-panel--one {
+  left: 3%;
+  width:100%;
+}
+.app-panel__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.app-panel__header span {
+  margin: 0 0 10px 0;
+  padding: 0 15px;
+  color: #999;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.app-panel__header span:first-child {
+  width: 90%;
+}
+.app-panel__content {
+  /*width:100%;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.app-panel__column {
+  height: 100%;
+  width:100%;
+  padding: 0 15px;
+  color: #222;
+}
+.app-panel__column:first-child {
+  width: 100%;
+  font-weight: 500;
+}
+.app-panel__column li {
+  padding: 10px 0;
+}
+
+#app-event-1, #app-event-2, #app-event-3, #app-event-4, #app-event-5 {
+  display: none;
+}
+#app-event-1:checked ~ .body .app .app-menu .app-nav .app-nav__icon:before {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+#app-event-1:checked ~ .body .app .app-menu .app-nav .app-nav__icon:after {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+/*#app-event-2:checked ~ .body .app .app-menu .app-search .app-search__field {
+  visibility: visible;
+  opacity: 1;
+}*/
+
+
+/*#app-event-3:checked ~ .body .app .app-header .app-header__image img:first-child {
+  display: none;
+}
+#app-event-3:checked ~ .body .app .app-header .app-header__image img:last-child {
+  display: block;
+}*/
+#app-event-3:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--one {
+  color: #222;
+  box-shadow: inset 0 -2px 0 0 #222;
+
+}
+#app-event-3:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--two {
+  color: #999;
+  box-shadow: none;
+}
+/*#app-event-3:checked ~ .body .app .app-body .app-panel--one {
+  left: calc(-100% + 80px);
+}
+#app-event-3:checked ~ .body .app .app-body .app-panel--two {
+  left: 30px;
+}*/
+
+
+
+
+
+
+#app-event-4:checked ~ .body .app .app-header .app-header__image img:first-child {
+  display: none;
+}
+#app-event-4:checked ~ .body .app .app-header .app-header__image img:last-child {
+  display: block;
+}
+#app-event-4:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--one {
+  color: #999;
+  box-shadow: none;
+}
+#app-event-4:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--two {
+  color: #222;
+  box-shadow: inset 0 -2px 0 0 #222;
+}
+#app-event-4:checked ~ .body .app .app-body .app-panel--one {
+  left: calc(-110% + 80px);
+}
+#app-event-4:checked ~ .body .app .app-body .app-panel--two {
+  left: 1px;
+  width:97%;
+}
+
+#app-event-5:checked ~ .body .app .app-header .app-header__image img:first-child {
+  display: none;
+}
+#app-event-5:checked ~ .body .app .app-header .app-header__image img:last-child {
+  display: block;
+}
+#app-event-5:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--one {
+  color: #999;
+  box-shadow: none;
+}
+#app-event-5:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--two {
+  color: #999;
+  box-shadow: none;
+}
+#app-event-5:checked ~ .body .app .app-header .app-tabs .app-tabs__tab--three {
+  color: #222;
+  box-shadow: inset 0 -2px 0 0 #222;
+}
+#app-event-5:checked ~ .body .app .app-body .app-panel--one {
+  left: calc(-110% + 80px);
+}
+#app-event-5:checked ~ .body .app .app-body .app-panel--two {
+  left: calc(-110% + 80px);
+}
+#app-event-5:checked ~ .body .app .app-body .app-panel--three {
+  left: 1px;
+  width:97%;
+}
 </style>
 <meta charset="UTF-8">
 {% if title %}
     <title>{{ title }}</title>
 {% else %}
-    <title>Harden Legal</title>
+    <title>TX Ins</title>
 {% endif %}
+
+
+
+
 
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand d-none d-md-block" href="/">Harden Legal, P.A.</a>
-
-            <a style="float:left" class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown">Practice Areas</a>
-            <div class="dropdown-menu" style="left: 10%; top: 50px;" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="/about">About</a>
-              <a class="dropdown-item" href="/criminal-defense">Criminal Defense</a>
-              <a class="dropdown-item" href="/injunctions">Injunctions</a>
-              <a class="dropdown-item" href="/wills-trusts-estates">Wills, Trusts, & Estates</a>
-              <a class="dropdown-item" href="/sealing-criminal-record">Sealing Criminal Records</a>
-              <a class="dropdown-item" href="http://www.courtdatesearch.com/">Search Court Date</a>
-              <a class="dropdown-item" href="/">Home</a>
-
-            </div>
-
+      <a class="navbar-brand" href="/">TX Forms</a>
 
 
             <button type="button" class="btn btn-primary align-right" data-toggle="modal" data-target="#exampleModal">
-              Contact Us
+              About
             </button>
 
     </nav>
@@ -306,21 +599,9 @@ button, input, textarea {
           <div class="modal-body"><center>
             <a href="mailto:info@courtdatesearch.com?Subject=Inquiry%20From%20Website"><button type="button" style="width:200px" class="btn btn-primary"><i class="material-icons">email</i> &nbsp Email
           </button></a><br><br>
-          <a href="tel:8134422788"><button type="button" style="width:200px" class="btn btn-primary"><i class="material-icons">phonelink_ring</i> &nbsp Call
         </button></a>
-        <br><br>
 
-      <p>
 
-  <button class="btn btn-primary" type="button" style="width:200px" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    <i class="material-icons">directions</i> &nbsp Directions
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-block">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.4122230258945!2d-82.51088178492996!3d28.07296308264185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c08d666b75e7%3A0xcbd42c6ae0bfa948!2s13919+Carrollwood+Village+Run%2C+Tampa%2C+FL+33618!5e1!3m2!1sen!2sus!4v1503516188804" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
-  </div>
-</div>
 
           </div>
         </div>
@@ -330,4 +611,4 @@ button, input, textarea {
 {% block content %}
 
 {% endblock %}
-<h5 style="float:right">Harden Legal, P.A. &nbsp</h5>
+<br>
