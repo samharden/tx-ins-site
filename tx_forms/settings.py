@@ -98,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]'tx_forms.com', 'www.tx_forms.com',
+]
 
 
 # Internationalization
