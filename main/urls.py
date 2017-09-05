@@ -5,5 +5,7 @@ from django.views.generic.base import TemplateView
 from . import views
 
 urlpatterns = [
-
+    url(r'^claim-form', views.claim_form, name='claim-form'),
 ]
+
+# main/claim-form.html

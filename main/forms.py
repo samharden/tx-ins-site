@@ -10,7 +10,7 @@ class proof_of_loss(forms.Form):
     insurer = forms.ChoiceField(
                                         required = True,
                                         label='Insurer',
-                                        choices = YN_CHOICES
+                                        choices = INSURER
                                         )
 
     policy_number = forms.CharField(label = '',
@@ -46,27 +46,27 @@ class proof_of_loss(forms.Form):
     loss_type = forms.ChoiceField(
                                         required = True,
                                         label='Type of Loss',
-                                        choices = YN_CHOICES
+                                        choices = LOSS_TYPE
                                         )
     loss_time = forms.ChoiceField(
                                         required = True,
                                         label='Time of Loss',
-                                        choices = YN_CHOICES
+                                        choices = TIME_CHOICES
                                         )
     loss_day = forms.ChoiceField(
                                         required = True,
                                         label='Day of Loss',
-                                        choices = YN_CHOICES
+                                        choices = DAY_CHOICES
                                         )
     loss_month= forms.ChoiceField(
                                         required = True,
-                                        label='Time of Loss',
-                                        choices = YN_CHOICES
+                                        label='Loss Month',
+                                        choices = MONTH_CHOICES
                                         )
     loss_year = forms.ChoiceField(
                                         required = True,
-                                        label='Time of Loss',
-                                        choices = YN_CHOICES
+                                        label='Loss Year',
+                                        choices = YEAR_CHOICES
                                         )
 
 

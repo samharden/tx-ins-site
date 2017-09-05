@@ -6,12 +6,14 @@ def home_page(request):
     return render(request, 'main/home.html')
 
 def claim_form(request):
-    form = claim_form()
+    form = proof_of_loss()
     if request.method == 'POST':
-        form = claim_form(request.POST)
+        form = proof_of_loss(request.POST)
         if form.is_valid():
             print("Valid")
+            return render(request, 'main/claim-form.html', {'form':form})
     else:
-        form = claim_form()
+        form = proof_of_loss()
 
-        return render(request, 'main/claim-form.html', {'form':form})
+
+    return render(request, 'main/claim-form.html', {'form':form})
