@@ -72,18 +72,19 @@ class proof_of_loss(forms.Form):
 
     loss_cause = forms.CharField(label = '',
                                 required = True,
-                                widget = forms.TextInput(attrs={
+                                widget = forms.Textarea(attrs={
                                 'placeholder': 'Cause of Loss',
                                 })
                                 )
     occupancy_type = forms.ChoiceField(
                                         required = True,
-                                        label='Time of Loss',
-                                        choices = YN_CHOICES
+                                        label='Occupancy Type',
+                                        choices = TYPE_CHOICES
                                         )
 
-    other_prop_interests = forms.ChoiceField(
-                                        required = True,
-                                        label='Time of Loss',
-                                        choices = YN_CHOICES
-                                        )
+    other_prop_interests = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'Other interested parties in property',
+                                })
+                                )
