@@ -25,7 +25,7 @@ SECRET_KEY = 'bigtime-secret'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tx-ins-form.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['tx-ins-form.herokuapp.com','tx-ins-form.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -98,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]'tx_forms.com', 'www.tx_forms.com', 
+]'tx_forms.com', 'www.tx_forms.com',
 
 
 # Internationalization
